@@ -1,22 +1,26 @@
 import React from 'react';
 
 const events = [
-  { title: 'Red Carpet Photography', img: 'https://chenstyletaichi.org/wp-content/uploads/2023/07/IMG_4582-scaled.jpg' },
-  { title: 'Wedding Photography', img: 'https://chenstyletaichi.org/wp-content/uploads/2022/04/TaiChi-2.jpg' },
-  { title: 'Photobooth', img: 'https://chenstyletaichi.org/wp-content/uploads/2023/07/IMG_6751.jpg' },
-  { title: 'Audio Setup', img: 'https://chenstyletaichi.org/wp-content/uploads/2023/07/IMG_4582-scaled.jpg' }
+  { title: 'Red Carpet Photography', img: 'https://via.placeholder.com/600x400' },
+  { title: 'Wedding Photography', img: 'https://via.placeholder.com/600x400' },
+  { title: 'Photobooth', img: 'https://via.placeholder.com/600x400' },
+  { title: 'Audio Setup', img: 'https://via.placeholder.com/600x400' }
 ];
 
 export default function Events() {
   return (
-    <section className="events">
-      <h2>Events Services</h2>
-      {events.map((ev, idx) => (
-        <div key={idx} className="event">
-          <h3>{ev.title}</h3>
-          <img src={ev.img} alt={ev.title} />
-        </div>
-      ))}
+    <section className="section container">
+      <h2 className="section-title">Events Services</h2>
+      <div className="cards-grid">
+        {events.map((ev, i) => (
+          <div key={i} className="card">
+            <div className="card-image">
+              <img src={ev.img} alt={ev.title} />
+            </div>
+            <h3>{ev.title}</h3>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
